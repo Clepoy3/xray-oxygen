@@ -72,9 +72,9 @@ float4 	skinning_pos 	(float4 pos, float4 m1, float4 m2)
 v_model skinning_0	(v_model_skinned_0	v)
 {
 	//	Swizzle for D3DCOLOUR format
-	v.N			= v.N.zyx;
-	v.T			= v.T.zyx;
-	v.B			= v.B.zyx;
+	v.N.xyz		= v.N.zyx;
+	v.T.xyz		= v.T.zyx;
+	v.B.xyz		= v.B.zyx;
 
 	// skinning
 	v_model 	o;
@@ -94,7 +94,7 @@ v_model skinning_1 	(v_model_skinned_1	v)
 	v.B.xyz		= v.B.zyx;
 	
 	// matrices
-	int 	mid 	= (int)round(v.N.w * 170 + 0.3);
+	int 	mid 	= (int)round(v.N.w * 170);
 	float4  rot 	= sbones_array[mid+0];
 	float4  pos 	= sbones_array[mid+1];
 
@@ -196,19 +196,19 @@ v_model skinning_4 	(v_model_skinned_4	v)
 	v.ind.xyz	= v.ind.zyx;
 
 	// matrices
-	int 	id_0 	= (int)round(v.i.x * 0.666666666);
+	int 	id_0 	= (int)round(v.ind.x * 0.666666666);
 	float4  rot_0 	= sbones_array[id_0+0];
 	float4  pos_0 	= sbones_array[id_0+1];
 
-	int 	id_1 	= (int)round(v.i.y * 0.666666666);
+	int 	id_1 	= (int)round(v.ind.y * 0.666666666);
 	float4 rot_1 	= sbones_array[id_1+0];
 	float4 pos_1 	= sbones_array[id_1+1];
 	
-	int 	id_2 	= (int)round(v.i.z * 0.666666666);
+	int 	id_2 	= (int)round(v.ind.z * 0.666666666);
 	float4 rot_2 	= sbones_array[id_2+0];
 	float4 pos_2 	= sbones_array[id_2+1];
 	
-	int 	id_3 	= (int)round(v.i.w * 0.666666666);
+	int 	id_3 	= (int)round(v.ind.w * 0.666666666);
 	float4 rot_3 	= sbones_array[id_3+0];
 	float4 pos_3 	= sbones_array[id_3+1];
 	
