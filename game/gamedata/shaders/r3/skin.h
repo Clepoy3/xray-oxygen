@@ -126,11 +126,11 @@ v_model skinning_2 	(v_model_skinned_2	v)
 	v.B.xyz		= v.B.zyx;
 
 	// matrices
-	int 	id_0 	= (int)round(v.tc.z * 0.666666666);
+	int 	id_0 	= (v.tc.z);
 	float4  rot_0 	= sbones_array[id_0+0];
 	float4  pos_0 	= sbones_array[id_0+1];
 
-	int 	id_1 	= (int)round(v.tc.w * 0.666666666);
+	int 	id_1 	= (v.tc.w);
 	float4 rot_1 	= sbones_array[id_1+0];
 	float4 pos_1 	= sbones_array[id_1+1];
 
@@ -196,19 +196,19 @@ v_model skinning_4 	(v_model_skinned_4	v)
 	v.ind.xyz	= v.ind.zyx;
 
 	// matrices
-	int 	id_0 	= (int)round(v.ind.x * 0.666666666);
+	int 	id_0 	= (int)round(v.ind.x * 170 + 0.3);
 	float4  rot_0 	= sbones_array[id_0+0];
 	float4  pos_0 	= sbones_array[id_0+1];
 
-	int 	id_1 	= (int)round(v.ind.y * 0.666666666);
+	int 	id_1 	= (int)round(v.ind.y * 170 + 0.3);
 	float4 rot_1 	= sbones_array[id_1+0];
 	float4 pos_1 	= sbones_array[id_1+1];
 	
-	int 	id_2 	= (int)round(v.ind.z * 0.666666666);
+	int 	id_2 	= (int)round(v.ind.z * 170 + 0.3);
 	float4 rot_2 	= sbones_array[id_2+0];
 	float4 pos_2 	= sbones_array[id_2+1];
 	
-	int 	id_3 	= (int)round(v.ind.w * 0.666666666);
+	int 	id_3 	= (int)round(v.ind.w * 170 + 0.3);
 	float4 rot_3 	= sbones_array[id_3+0];
 	float4 pos_3 	= sbones_array[id_3+1];
 	
